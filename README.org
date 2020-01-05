@@ -1,0 +1,29 @@
+* Setup 
+  
+  See [[https://www.atlassian.com/git/tutorials/dotfiles][Dotfiles tutorial by Atlassian]].
+  
+** Install Dotfiles
+   
+   #+BEGIN_SRC
+   git clone --bare git@github.com:fzuellich/dotfiles.git $HOME/dotfiles
+   alias --save config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
+   config config --local status.showUntrackedFiles no
+   config checkout
+   #+END_SRC
+
+** From scratch (fish-style)
+
+  #+BEGIN_SRC
+  git init --bare $HOME/dotfiles
+  alias --save config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
+  config config --local status.showUntrackedFiles no
+  #+END_SRC
+
+* File manager
+
+is [[https://wiki.archlinux.org/index.php/Thunar#Plugins_and_addons][thunar]]. There are more plugins available to mount file systems etc. 
+
+* Images
+
+image organizer is ~digikam~.
+~feh~ for simple image viewing.
