@@ -17,9 +17,9 @@ window:
   #
   # Specified in number of columns/lines, not pixels.
   # If both are `0`, this setting is ignored.
-  #dimensions:
-  #  columns: 0
-  #  lines: 0
+  dimensions:
+    columns: 90
+    lines: 60
 
   # Window position (changes require restart)
   #
@@ -100,16 +100,16 @@ window:
 #tabspaces: 8
 
 # Font configuration
-font:
+#font:
   # Normal (roman) font face
-  normal:
+  #normal:
     # Font family
     #
     # Default:
     #   - (macOS) Menlo
     #   - (Linux) monospace
     #   - (Windows) Consolas
-    family: monospace
+    #family: monospace
 
     # The `style` can be specified to pick a specific face.
     #style: Regular
@@ -183,10 +183,10 @@ font:
 #draw_bold_text_with_bright_colors: true
 
 # Colors (Tomorrow Night Bright)
-#colors:
+colors:
   # Default colors
-  #primary:
-  #  background: '0x000000'
+  primary:
+    background: '0x282a36'
   #  foreground: '0xeaeaea'
 
     # Bright and dim foreground colors
