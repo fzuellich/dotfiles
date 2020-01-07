@@ -27,3 +27,14 @@ is [[https://wiki.archlinux.org/index.php/Thunar#Plugins_and_addons][thunar]]. T
 
 image organizer is ~digikam~.
 ~feh~ for simple image viewing.
+* Single-Sign-On SSH configuration
+See [[https://wiki.archlinux.org/index.php/SSH_keys#ssh-agent][Archlinux Wiki]].
+
+Required files are ~.pam_environment~ and
+~.config/systemd/user/ssh-agent.service~.
+
+Don't forget to enable and start the service:
+~systemctl --user start ssh-agent~
+~systemctl --user enable ssh-agent~
+
+And add ~AddKeysToAgent yes~ to your SSH config.
