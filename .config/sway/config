@@ -18,7 +18,7 @@ set $term alacritty
 # Your preferred application launcher
 # Note: it's recommended that you pass the final command to sway
 #set $menu dmenu_path | dmenu | xargs swaymsg exec --
-set $menu wofi --show drun | xargs swaymsg exec --
+set $menu wofi --show drun --allow-images | xargs swaymsg exec --
 
 ### Output configuration
 #
@@ -242,6 +242,7 @@ for_window [app_id="Alacritty"] {
     move container to workspace 3
     focus
 }
+
 #assign [app_id="Alacritty"] 3
 
 #
