@@ -254,7 +254,7 @@ bar {
 
     # When the status_command prints a new line to stdout, swaybar updates.
     # The default just shows the current date and time.
-    status_command while true; do echo "$(date +'%Y-%m-%d %l:%M:%S %p') // $(uptime -p)"; sleep 1; done
+    status_command while true; do echo "$(date +'%Y-%m-%d %H:%M:%S') // $(uptime -p)"; sleep 1; done
 
     colors {
         statusline #ffffff
