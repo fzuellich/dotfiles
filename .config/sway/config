@@ -20,6 +20,10 @@ set $term alacritty
 #set $menu dmenu_path | dmenu | xargs swaymsg exec --
 set $menu wofi --show drun --allow-images | xargs swaymsg exec --
 
+### Input configuration
+# Laptop
+input "1:1:AT_Translated_Set_2_keyboard" xkb_layout de
+
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
@@ -27,7 +31,6 @@ output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 
 # left monitor
 output eDP-1 transform 270 position 0,
-
 output DP-3 {
   resolution 1920x1200
   transform 270
@@ -38,6 +41,12 @@ output DP-4 {
   resolution 1920x1200
   transform 270
   position 2640,0
+}
+
+# Ecke
+output "Samsung Electric Company SAMSUNG 0x00000001" {
+  resolution 1920x1200
+  position 2560,0
 }
 
 gaps inner 5
@@ -69,7 +78,7 @@ gaps inner 5
     bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
 
     bindsym Mod1+Shift+l exec swaylock --show-failed-attempts --ignore-empty-password -i ~/Pictures/just_lock.png
-    bindsym Mod4+z exec "grim -g $(slurp -b '#ffffffc8') ~/Pictures/$(date +Screenshot_%Y-%m-%d_%H-%M-%S.png)"
+    bindsym Mod4+z exec 'grim -g "$(slurp)" ~/Pictures/$(date +Screenshot_%Y-%m-%d_%H-%M-%S.png)'
 #
 # Moving around:
 #
@@ -146,6 +155,10 @@ gaps inner 5
 
     # Move focus to the parent container
     bindsym $mod+a focus parent
+
+
+    bindsym $mod+Alt+1 output eDP-1 transform 0
+    bindsym $mod+Alt+0 output eDP-1 transform 270
 #
 # Scratchpad:
 #
