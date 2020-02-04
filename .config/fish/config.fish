@@ -14,3 +14,8 @@ set EDITOR '/usr/bin/vim'
 
 # add cargo/bin to path, so we can run rusty awesomeness
 set -a PATH "/home/fzuellich/.cargo/bin"
+set -a PATH "/usr/share"
+
+# configure JUST stuff
+set -x JUST_LDAP_USERNAME_CMD 'echo "ferenc.zuellich"'
+set -x JUST_LDAP_PASSWORD_CMD "pass show just.social/ldap/ferenc.zuellich"

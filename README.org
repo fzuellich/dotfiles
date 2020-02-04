@@ -38,3 +38,15 @@ Don't forget to enable and start the service:
 ~systemctl --user enable ssh-agent~
 
 And add ~AddKeysToAgent yes~ to your SSH config.
+* Setup pass
+
+Install pass and gnupg
+
+~pacman -S pass gnupg~
+
+Generate a new key
+
+~gnupg --ful-gen-key~ see https://wiki.archlinux.org/index.php/GnuPG#Usage for
+more information.
+
+Continue with https://wiki.archlinux.org/index.php/Pass
