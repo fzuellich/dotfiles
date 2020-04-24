@@ -18,7 +18,7 @@ set $term alacritty
 # Your preferred application launcher
 # Note: it's recommended that you pass the final command to sway
 #set $menu dmenu_path | dmenu | xargs swaymsg exec --
-set $menu wofi --show drun --allow-images | xargs swaymsg exec --
+set $menu wofi --no-actions --show drun --allow-images | xargs swaymsg exec --
 
 ### Input configuration
 # Laptop
@@ -72,6 +72,14 @@ gaps inner 5
 
     bindsym Mod1+Shift+l exec swaylock --show-failed-attempts --ignore-empty-password -i ~/Pictures/just_lock.png
     bindsym Mod4+z exec 'grim -g "$(slurp)" ~/Pictures/$(date +Screenshot_%Y-%m-%d_%H-%M-%S.png)'
+
+    # Toggle Mute Mumble
+    bindsym $mod+Shift+m exec sh ~/mumble_rpc_togglemute.sh
+    bindsym $mod+Shift+d exec sh ~/mumble_rpc_toggledeaf.sh
+
+    # Meeting menu
+    bindsym $mod+m exec fish -c 'set -l jitsi_room (echo "honig" | wofi -d); chromium "https://meet.just-ag.com/$jitsi_room"'
+
 #
 # Moving around:
 #
