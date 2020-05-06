@@ -50,3 +50,5 @@ Generate a new key
 more information.
 
 Continue with https://wiki.archlinux.org/index.php/Pass
+* Git-Setup
+~git config --global commit.template ~/Dotfiles/commit-message-template.txt~

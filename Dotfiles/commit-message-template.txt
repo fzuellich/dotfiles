@@ -1,0 +1,34 @@
+Project: Subject line refs/implements/fixes JUST-
+
+# Why do we need this change?
+#
+# It might include a brief description of the problem that's being solved, and
+# why this is the best approach.
+#
+# If there are any shortcomings to the approach, they should be mentioned.
+#
+# If relevant, include background information such as bug numbers, benchmark
+# results, and links to design documents.
+#
+# If you include links to external resources consider that they may not be
+# visible to future readers due to access restrictions or retention policies.
+# Where possible include enough context for reviewers and future readers to
+# understand the CL.
+
+
+# How does it work?
+
+
+# Style considerations:
+#
+#   One sentence = one thought.
+#
+# Try to reduce subordinate clauses, that are introduced by:
+#
+# - which
+# - that
+# - because
+# - whose
+# - until
+# - unless
+# - since
