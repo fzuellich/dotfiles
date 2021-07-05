@@ -1,0 +1,34 @@
+# -*- mode: snippet -*-
+# name: Postmortem
+# key: postmortem
+# --
+** `(format-time-string "%Y/%m/%d")` - $1Kunde - Zusammenfassung :postmortem:
+#+OPTIONS: num:nil toc:nil
+
+- Was war das Problem (Fehlermeldung mit Herkunft)
+
+*** Metadaten
+
+- Just Version: $2
+- Auf welchem Server (app1, lb, etc.)
+- Links zu Zendesk
+- Links zu Jira
+- Analysiert von: Ferenc
+- Konnte das Problem und die Ursache geklärt werden?
+
+*** Wie wurde das Problem behoben?
+
+*** Wie wurde das Problem analysiert?
+
+- Welche Schritte?
+- Was wurde angeguckt?
+- Wie sah das aus, was zu Schlussfolgerungen geführt hat?
+
+Schlecht: Wir fanden eine LockException im Log von Toro
+Gut: Es kam zu einer LockException. /var/log/justsoftware/toro.log <Kopie der Exception und des Stacktrace>
+
+$2
+
+*** Wie könnte man das Problem in Zukunft verhindern?
+
+*** Lessons learned

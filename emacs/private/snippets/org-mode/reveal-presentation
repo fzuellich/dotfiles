@@ -1,0 +1,15 @@
+# -*- mode: snippet -*-
+# name: Reveal Presentation
+# key:
+# --
+
+#+TITLE: 
+#+REVEAL_ROOT: https://cdn.jsdelivr.net/npm/reveal.js
+#+REVEAL_INIT_OPTIONS: slideNumber:"c/t"
+#+REVEAL_THEME: blood
+# #+REVEAL_THEME: solarized
+#+REVEAL_TITLE_SLIDE: %t
+#+OPTIONS: num:nil toc:nil
+
+Split like this:
+#+REVEAL: split

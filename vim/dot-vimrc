@@ -1,0 +1,37 @@
+execute pathogen#infect()
+syntax on
+filetype plugin indent on
+
+let mapleader = "<"
+
+set nocompatible
+set enc=utf-8
+set wildmenu
+set showcmd
+set nomodeline
+set ruler
+set nostartofline
+set laststatus=2
+set confirm
+set visualbell
+set mouse=a
+set cmdheight=2
+set nu
+set notimeout ttimeout ttimeoutlen=200
+set autoindent
+set tabstop=8
+set shiftwidth=4
+set softtabstop=4
+set expandtab
+set hlsearch
+set ignorecase
+set smartcase
+set nofoldenable
+
+" Change settings when using jrnl.sh
+" use: editor: vim -f -c JrnlSettings
+" compare: https://github.com/maebert/jrnl/issues/491
+function! JrnlSettings()
+    set tw=60
+endfunction
+command! JrnlSettings call JrnlSettings()
