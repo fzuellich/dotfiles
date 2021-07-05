@@ -9,13 +9,25 @@ set pure_separate_prompt_on_error true
 
 # fish variables
 
-# Use vi as EDITOR
+# Use vi as EDITOR and unset other popular variables
+# to always fallback to $EDITOR
+set -e VISUAL
+set -e SUDO_EDITOR
 set EDITOR '/usr/bin/vim'
 
 # add cargo/bin to path, so we can run rusty awesomeness
 set -a PATH "/home/fzuellich/.cargo/bin"
 set -a PATH "/usr/share"
+set -a PATH "/home/fzuellich/bin"
+set -a PATH (go env GOPATH)"/bin"
 
-# configure JUST stuff
-set -x JUST_LDAP_USERNAME_CMD 'echo "ferenc.zuellich"'
-set -x JUST_LDAP_PASSWORD_CMD "pass show just.social/ldap/ferenc.zuellich"
+set TTY1 (tty)
+if test -z "$DISPLAY"; and test $TTY1 = "/dev/tty1"
+  exec sway -c /home/fzuellich/.config/sway/home
+  # exec sway -c /home/fzuellich/.config/sway/config
+end
+
+source $HOME/.config/fish/workonly.fish
+
+
+

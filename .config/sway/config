@@ -30,7 +30,8 @@ input "1:1:AT_Translated_Set_2_keyboard" xkb_layout de
 # output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 
 # left monitor
-output eDP-1 transform 270 position 0,
+output eDP-1 transform 0 position 0,
+#output eDP-1 transform 270 position 0,
 output DP-3 {
   resolution 1920x1200
   transform 270

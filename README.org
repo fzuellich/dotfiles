@@ -27,6 +27,7 @@ is [[https://wiki.archlinux.org/index.php/Thunar#Plugins_and_addons][thunar]]. T
 
 image organizer is ~digikam~.
 ~feh~ for simple image viewing.
+
 * Single-Sign-On SSH configuration
 See [[https://wiki.archlinux.org/index.php/SSH_keys#ssh-agent][Archlinux Wiki]].
 
@@ -38,6 +39,7 @@ Don't forget to enable and start the service:
 ~systemctl --user enable ssh-agent~
 
 And add ~AddKeysToAgent yes~ to your SSH config.
+
 * Setup pass
 
 Install pass and gnupg
@@ -51,4 +53,24 @@ more information.
 
 Continue with https://wiki.archlinux.org/index.php/Pass
 * Git-Setup
-~git config --global commit.template ~/Dotfiles/commit-message-template.txt~
+#+begin_src shell :results output silent
+  git config --global commit.template ~/.config/git/commit-message-template.txt
+#+end_src
+
+* Fish tweaks
+Emacs' =ansi-term= does not support setting the title of the terminal. Run this
+once (~, b e~):
+
+#+BEGIN_SRC shell :results output silent
+  function fish_title; end; funcsave fish_title
+#+END_SRC
+
+[[https://fishshell.com/docs/current/faq.html#i-m-seeing-weird-output-before-each-prompt-when-using-screen-what-s-wrong][See fish documentation for more info.]]
+
+* Clipboard manager
+=greenclip= with =wl-clipboard=
+
+Setup for Sway:
+~bindsym $mod+c exec fish -c 'greenclip print | wofi -odi | wl-copy'~
+
+Configure greenclip daemon to start with sway: https://wiki.archlinux.org/index.php/Sway#Manage_Sway-specific_daemons_with_systemd

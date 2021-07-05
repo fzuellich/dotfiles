@@ -35,9 +35,10 @@ output HDMI-A-1 {
 }
 # laptop
 output eDP-1 {
-    resolution 1920x1080
+    resolution 2560x1440
+    #resolution 1920x1080
     position 0,1080
-    scale 1
+    scale 2
 }
 
 #bindsym $mod+Alt+1 output eDP-1 transform 0
@@ -71,14 +72,13 @@ gaps inner 5
     bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
 
     bindsym Mod1+Shift+l exec swaylock --show-failed-attempts --ignore-empty-password -i ~/Pictures/just_lock.png
-    bindsym Mod4+z exec 'grim -g "$(slurp)" ~/Pictures/$(date +Screenshot_%Y-%m-%d_%H-%M-%S.png)'
+    bindsym Mod4+z exec 'grim -g "$(slurp)" - | wl-copy | wl-paste > ~/Pictures/$(date +Screenshot_%Y-%m-%d_%H-%M-%S.png)'
 
-    # Toggle Mute Mumble
-    bindsym $mod+Shift+m exec sh ~/mumble_rpc_togglemute.sh
-    bindsym $mod+Shift+d exec sh ~/mumble_rpc_toggledeaf.sh
+    # CMus
+    bindsym $mod+Shift+m exec fish -c 'cmus-toggle-play'
 
     # Meeting menu
-    bindsym $mod+m exec fish -c 'set -l jitsi_room (echo "honig" | wofi -d); chromium "https://meet.just-ag.com/$jitsi_room"'
+    bindsym $mod+c exec fish -c 'greenclip print | wofi -di -L 5 | wl-copy'
 
 #
 # Moving around:
@@ -209,8 +209,7 @@ client.unfocused        $gray #1D1F21 #989B9A #292D2E   $gray
 client.urgent           $gray #cc6666 #FFFFFF #900000   $gray
 client.placeholder      $gray #619BAB #FFFFFF #000000   $gray
 
-client.background       #1D1F21
-
+client.background       #0171f9
 default_border pixel 3
 
 focus_follows_mouse no
@@ -234,6 +233,10 @@ bar {
     swaybar_command waybar
 }
 
+exec_always "systemctl --user import-environment; systemctl --user start sway-session.target"
 exec mako
+exec firefox && sway '[class="firefox"]' move container to workspace 2
+exec emacs && sway '[class="Emacs"]' move container to workspace 2 && sway '[class="Emacs"]' layout tabbed
+exec alacritty --working-directory ~/projects/juco
 
 include /etc/sway/config.d/*
