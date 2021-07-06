@@ -45,8 +45,6 @@ This function should only modify configuration layer settings."
      ansible
      react
      fzuellich-config
-     (hackernews :variables
-                 hackernews-items-per-page 30)
      csv
      ansible
      python
