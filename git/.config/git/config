@@ -15,6 +15,6 @@
 [rebase]
 	autosquash = true
 [commit]
-	template = /home/.config/git/commit-message-template.txt
+	template = ~/.config/git/commit-message-template.txt
 [advice]
 	deatchedHead = false
