@@ -42,15 +42,13 @@ default_border pixel 3
 focus_follows_mouse no
 for_window [app_id="Alacritty"] {
     border pixel 3
-    move container to workspace 3
+    move container to workspace 1
     focus
 }
 
 for_window [class="firefox"] {
     move container to workspace 2
 }
-
-#assign [app_id="Alacritty"] 3
 
 #
 # Status Bar:
@@ -66,6 +64,7 @@ bar {
 	inactive_workspace #32323200 #32323200 #5c5c5c
     }
 }
+
 bar {
     position top
     output eDP-1
