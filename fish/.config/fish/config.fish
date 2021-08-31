@@ -26,4 +26,7 @@ if test -z "$DISPLAY"; and test $TTY1 = "/dev/tty1"
   exec sway -c /home/fzuellich/.config/sway/config
 end
 
-source $HOME/.config/fish/workonly.fish
+if test -f $HOME/.config/fish/workonly.fish
+  echo "Sourcing workonly"
+  source $HOME/.config/fish/workonly.fish
+end
