@@ -23,8 +23,7 @@ set -a PATH (go env GOPATH)"/bin"
 
 set TTY1 (tty)
 if test -z "$DISPLAY"; and test $TTY1 = "/dev/tty1"
-  exec sway -c /home/fzuellich/.config/sway/home
-  # exec sway -c /home/fzuellich/.config/sway/config
+  exec sway -c /home/fzuellich/.config/sway/config
 end
 
 source $HOME/.config/fish/workonly.fish
