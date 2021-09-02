@@ -13,7 +13,7 @@ set pure_separate_prompt_on_error true
 # to always fallback to $EDITOR
 set -e VISUAL
 set -e SUDO_EDITOR
-set EDITOR '/usr/bin/vim'
+set -x EDITOR '/usr/bin/vim'
 
 # add cargo/bin to path, so we can run rusty awesomeness
 set -a PATH "/home/fzuellich/.cargo/bin"
@@ -26,7 +26,10 @@ if test -z "$DISPLAY"; and test $TTY1 = "/dev/tty1"
   exec sway -c /home/fzuellich/.config/sway/config
 end
 
-if test -f $HOME/.config/fish/workonly.fish
-  echo "Sourcing workonly"
+if test -f "$HOME/.config/fish/workonly.fish"
   source $HOME/.config/fish/workonly.fish
+end
+
+if test -S "$XDG_RUNTIME_DIR/ssh-agent.socket"
+  set -x SSH_AUTH_SOCK "$XDG_RUNTIME_DIR/ssh-agent.socket"
 end
