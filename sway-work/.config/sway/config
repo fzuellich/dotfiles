@@ -1,8 +1,5 @@
 include $HOME/.config/sway/basic
 
-set $term alacritty
-set $menu wofi --no-actions --show drun --allow-images | xargs swaymsg exec --
-
 ### Input configuration
 # Laptop
 input "1:1:AT_Translated_Set_2_keyboard" xkb_layout de
@@ -23,53 +20,5 @@ output eDP-1 {
     position 0,1080
     scale 1
 }
-
-#bindsym $mod+Alt+1 output eDP-1 transform 0
-
-gaps inner 5
-
-# colors
-set $green #76CB58
-set $blue  #619BAB
-set $black #1D1F21
-set $salmon #ff82a4
-set $gray #989B9A
-
-# class                 border  bground text    indicator child_border
-client.focused          $gray #aa65a6 #ffffff   #76CB58 #ffffff
-client.focused_inactive $gray #619BAB #FFFFFF #484E50   $gray
-client.unfocused        $gray #1D1F21 #989B9A #292D2E   $gray
-client.urgent           $gray #cc6666 #FFFFFF #900000   $gray
-client.placeholder      $gray #619BAB #FFFFFF #000000   $gray
-
-client.background       #0171f9
-default_border pixel 3
-
-focus_follows_mouse no
-for_window [app_id="Alacritty"] {
-    border pixel 3
-    move container to workspace 3
-    focus
-}
-
-for_window [class="firefox"] {
-    move container to workspace 2
-}
-
-#assign [app_id="Alacritty"] 3
-
-#
-# Status Bar:
-#
-# Read `man 5 sway-bar` for more information about this section.
-bar {
-    swaybar_command waybar
-}
-
-exec_always "systemctl --user import-environment; systemctl --user start sway-session.target"
-exec mako
-exec firefox && sway '[class="firefox"]' move container to workspace 2
-exec emacs && sway '[class="Emacs"]' move container to workspace 2 && sway '[class="Emacs"]' layout tabbed
-exec alacritty
 
 include /etc/sway/config.d/*
