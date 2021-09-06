@@ -107,8 +107,11 @@ bar {
     # CMus
     bindsym $mod+Shift+m exec fish -c 'cmus-toggle-play'
 
-    # Meeting menu
+    # Clipboard manager
     bindsym $mod+c exec fish -c 'greenclip print | wofi -di -L 5 | wl-copy'
+
+    # Password manager
+    bindsym $mod+p exec wofipassmenu
 
 #
 # Moving around:
