@@ -111,7 +111,7 @@ bar {
     bindsym $mod+c exec fish -c 'greenclip print | wofi -di -L 5 | wl-copy'
 
     # Password manager
-    bindsym $mod+p exec wofipassmenu
+    bindsym $mod+p exec passmenu -h 50
 
 #
 # Moving around:
