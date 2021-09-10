@@ -9,19 +9,22 @@ exec alacritty
 
 ### Layout
 #
-# Colors
+# Colors based on https://github.com/chriskempson/base16/blob/master/styling.md
+# and https://github.com/rkubosz/base16-sway
+
 set $green #76CB58
 set $blue  #619BAB
 set $black #1D1F21
 set $salmon #ff82a4
 set $gray #989B9A
+include ~/projects/base16-sway/themes/base16-bright.config
 
 # class                 border  bground text    indicator child_border
-client.focused          $gray #aa65a6 #ffffff   #76CB58 #ffffff
-client.focused_inactive $gray #619BAB #FFFFFF #484E50   $gray
-client.unfocused        $gray #1D1F21 #989B9A #292D2E   $gray
-client.urgent           $gray #cc6666 #FFFFFF #900000   $gray
-client.placeholder      $gray #619BAB #FFFFFF #000000   $gray
+client.focused          $base0E   $base0E $base01 #76CB58 #ffffff
+client.focused_inactive $gray #619BAB $base01 #484E50   $gray
+client.unfocused        $gray $base03 $base07 #292D2E   $gray
+client.urgent           $gray #cc6666 $base01 #900000   $gray
+client.placeholder      $gray #619BAB $base01 #000000   $gray
 client.background       #0171f9
 
 default_border pixel 3
@@ -39,6 +42,7 @@ for_window [class="firefox"] {
     move container to workspace 2
 }
 
+
 ### Status Bar:
 #
 # Read `man 5 sway-bar` for more information about this section.
@@ -49,8 +53,12 @@ bar {
     pango_markup enabled
     colors {
 	statusline #ffffff
-	background #323232
-	inactive_workspace #32323200 #32323200 #5c5c5c
+	background $base00
+    focused_separator $base09
+
+    focused_workspace   $base0E $base0E $base02
+    active_workspace    $base0A $base0A $base02
+	inactive_workspace  $base06 $base04 $base00
     }
 }
 
@@ -59,8 +67,11 @@ bar {
     output eDP-1
     colors {
 	statusline #ffffff
-	background #323232
-	inactive_workspace #32323200 #32323200 #5c5c5c
+	background $base00
+
+    focused_workspace   $base0E $base0E $base02
+    active_workspace    $base0A $base0A $base02
+	inactive_workspace  $base06 $base04 $base00
     }
 }
 
