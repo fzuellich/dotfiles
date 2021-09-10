@@ -21,4 +21,20 @@ output eDP-1 {
     scale 1
 }
 
+bar {
+    output HDMI-A-1
+    position top
+    status_command while true; do ./.config/sway/statusline.fish; sleep 1; done
+    pango_markup enabled
+    colors {
+	statusline #ffffff
+	background $base00
+    focused_separator $base09
+
+    focused_workspace   $base0E $base0E $base02
+    active_workspace    $base0A $base0A $base02
+	inactive_workspace  $base06 $base04 $base00
+    }
+}
+
 include /etc/sway/config.d/*
