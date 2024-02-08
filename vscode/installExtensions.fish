@@ -1,0 +1,12 @@
+code --install-extension bodil.file-browser
+code --install-extension dbaeumer.vscode-eslint
+code --install-extension esbenp.prettier-vscode
+code --install-extension github.copilot
+code --install-extension github.copilot-chat
+code --install-extension jacobdufault.fuzzy-search
+code --install-extension kahole.magit
+code --install-extension ms-vsliveshare.vsliveshare
+code --install-extension vscodevim.vim
+code --install-extension vspacecode.vspacecode
+code --install-extension vspacecode.whichkey
+code --install-extension yoavbls.pretty-ts-errors
