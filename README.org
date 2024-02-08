@@ -1,7 +1,9 @@
 * Setup 
   
   See [[https://www.atlassian.com/git/tutorials/dotfiles][Dotfiles tutorial by Atlassian]].
-  
+
+* Linux
+
 ** Install Dotfiles
    
    #+BEGIN_SRC
@@ -19,11 +21,19 @@
   config config --local status.showUntrackedFiles no
   #+END_SRC
 
-* File manager
+** File manager
 
 is [[https://wiki.archlinux.org/index.php/Thunar#Plugins_and_addons][thunar]]. There are more plugins available to mount file systems etc. 
 
-* Images
+** Images
 
 image organizer is ~digikam~.
 ~feh~ for simple image viewing.
+
+* Mac
+
+Double check the listed files (e.g. is Slack and Docker really required?):
+
+#+begin_src
+xargs brew install < brew.txt
+#+end_src
