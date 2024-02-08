@@ -19,6 +19,7 @@ timewarrior
 1password
 docker
 emacs-mac
+rectangle-pro
 signal
 slack
 visual-studio-code
