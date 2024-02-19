@@ -1,4 +1,7 @@
 ;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
+(setq shell-file-name (executable-find "bash"))
+
+(setq doom-localleader-key ",")
 
 ;; Place your private configuration here! Remember, you do not need to run 'doom
 ;; sync' after modifying this file!
@@ -79,10 +82,24 @@
   :config (setq copilot-node-executable "/Users/fzuellich/.local/share/nvm/v20.11.0/bin/node")
   :hook (prog-mode . copilot-mode)
   :bind (:map copilot-completion-map
-              ("C-ö" . 'copilot-accept-completion)))
+              ("<tab>" . 'copilot-accept-completion)
+              ("TAB" . 'copilot-accept-completion)
+              ("C-TAB" . 'copilot-accept-completion-by-word)
+              ("C-<tab>" . 'copilot-accept-completion-by-word)))
 
 (after! treesit
   :config (setq treesit-language-source-alist
                  '((typescript "https://github.com/tree-sitter/tree-sitter-typescript" "master" "typescript/src" nil nil)
                    (tsx "https://github.com/tree-sitter/tree-sitter-typescript" "master" "tsx/src" nil nil)))
            (setq! treesit-font-lock-level 4))
+
+;;; Define keybindings here where we can press , . to fix typescript errors
+;; (map! :map typescript-mode-map
+;;       :n
+;;       "C-." #'tide-fix)
+(map! :after typescript-mode :map typescript-mode-map
+      :n "C-." #'tide-fix)
+(map! :after typescript-mode :map typescript-mode-map
+      :localleader
+      :n "," #'tide-fix
+      :n "r r" #'tide-rename-symbol)
